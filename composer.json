@@ -1,0 +1,15 @@
+{
+    "name": "tp-php/anais",
+    "description": "Tp PHP de developpement web avancée avec Jerome",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Anais Constantin",
+            "email": "anais.constantin@free.fr"
+        }
+    ],
+    "require": {
+        "zendframework/zend-feed": "^2.7",
+        "zendframework/zend-http": "^2.6"
+    }
+}

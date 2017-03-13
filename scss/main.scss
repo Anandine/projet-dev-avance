@@ -1,0 +1,25 @@
+@import 'variables';
+@import 'mixins';
+
+body {
+	font: 100% $font-stack;
+	color: $primary-color;
+	font-size: $font-size-base;
+}
+
+h1 {
+	font-size: $font-size-h1;
+	text-align: center;
+}
+.container {
+	.box {
+		@include border-radius(10px);
+		border: $primary-color 1px;
+		margin-right: 30px;
+
+		h3 {
+			font-size: $font-size-h3;
+			color: $headings-color;
+		}
+	}
+}
