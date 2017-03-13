@@ -1,0 +1,1 @@
+C'est un projet de dev web avancé avec Jerome Fath pour une initiation à scss, bootstrap, git, etc.
