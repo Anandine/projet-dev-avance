@@ -1,6 +1,6 @@
 import * as article from "./article";
 import "whatwg-fetch";
-
+//pont d'entrée
 
 fetch('http://localhost:8000')
 	.then(function(reponse) {

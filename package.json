@@ -4,8 +4,8 @@
   "description": "Pour le cours de dev avancé, on y fait du sass entre autre",
   "main": "index.js",
   "dependencies": {
-    "babel-core": "^6.23.1",
-    "babel-loader": "^6.3.2",
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.1",
     "bootstrap-sass": "^3.3.7",
     "express": "^4.14.1",
     "webpack": "^2.2.1",

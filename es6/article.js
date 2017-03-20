@@ -1,3 +1,4 @@
+//module
 export function remove() {
 	//alert('remove');//il faut qu'il affiche le data-id de l'article
 	//event currentTarget data-set
