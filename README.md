@@ -15,12 +15,21 @@ This is a web development projet with Jerome Fath about scss, bootstrap, git, co
 		<div class="highlight highlight-source-shell">
 			<pre>
 $ npm install
-$ php composer</pre>
+$ composer install</pre>
 		</div>
 	</li>
 	<li><p>Load articles</p>
 		<div class="highlight highlight-source-shell">
 			<pre>$ php cli/import.php</pre>
+		</div>
+	</li>
+	<li><p>Load and compile the css (and Bootstrap), the js and the Fonts</p>
+		<div class="highlight highlight-source-shell">
+			<pre>
+$ npm run build:scss:main
+$ npm run build:scss:bootstrap
+$ npm run assets:install:bootstrap
+$ npm run build:js:app</pre>
 		</div>
 	</li>
 	<li><p>Go into the web folder</p>
