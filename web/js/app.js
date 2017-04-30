@@ -1,41 +1,41 @@
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
-
+/******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
-
+/******/
 /******/ 		// Check if module is in cache
 /******/ 		if(installedModules[moduleId])
 /******/ 			return installedModules[moduleId].exports;
-
+/******/
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			i: moduleId,
 /******/ 			l: false,
 /******/ 			exports: {}
 /******/ 		};
-
+/******/
 /******/ 		// Execute the module function
 /******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-
+/******/
 /******/ 		// Flag the module as loaded
 /******/ 		module.l = true;
-
+/******/
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-
-
+/******/
+/******/
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
-
+/******/
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
-
+/******/
 /******/ 	// identity function for calling harmony imports with the correct context
 /******/ 	__webpack_require__.i = function(value) { return value; };
-
+/******/
 /******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
 /******/ 		if(!__webpack_require__.o(exports, name)) {
@@ -46,7 +46,7 @@
 /******/ 			});
 /******/ 		}
 /******/ 	};
-
+/******/
 /******/ 	// getDefaultExport function for compatibility with non-harmony modules
 /******/ 	__webpack_require__.n = function(module) {
 /******/ 		var getter = module && module.__esModule ?
@@ -55,15 +55,15 @@
 /******/ 		__webpack_require__.d(getter, 'a', getter);
 /******/ 		return getter;
 /******/ 	};
-
+/******/
 /******/ 	// Object.prototype.hasOwnProperty.call
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-
+/******/
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "";
-
+/******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -73,13 +73,15 @@
 "use strict";
 
 
-var _article = __webpack_require__(2);
+var _article = __webpack_require__(1);
 
 var article = _interopRequireWildcard(_article);
 
-__webpack_require__(3);
+__webpack_require__(2);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+//pont d'entrée
 
 fetch('http://localhost:8000').then(function (reponse) {
 	//console.log(reponse);
@@ -106,17 +108,42 @@ var name = 'toto';
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(0);
+"use strict";
 
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+exports.remove = remove;
+//module
+function remove() {
+	//alert('remove');//il faut qu'il affiche le data-id de l'article
+	//event currentTarget data-set
+	fetch(url).then(checkStatus).then(parseJSON).then(function (body) {
+		console.log('report succeded with reponse', body);
+	}) /*,
+    catch(function(error) {
+    console.log('request failed', error)
+    })*/
+	;
+}
+
+function checkStatus(response) {
+	if (response.status >= 200 && response.status < 300) {
+		return response;
+	} else {
+		var error = new Error(response.statusText);
+		error.response = response;
+		throw error;
+	}
+}
+
+function parseJSON(response) {
+	return response.json();
+}
 
 /***/ }),
 /* 2 */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed: SyntaxError: Unexpected token (10:2)\n\n\u001b[0m \u001b[90m  8 | \u001b[39m\t\t\tconsole\u001b[33m.\u001b[39mlog(\u001b[32m'report succeded with reponse'\u001b[39m\u001b[33m,\u001b[39m body)\n \u001b[90m  9 | \u001b[39m\t\t})\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 10 | \u001b[39m\t\t\u001b[36mcatch\u001b[39m(\u001b[36mfunction\u001b[39m(error) {\n \u001b[90m    | \u001b[39m\t\t\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 11 | \u001b[39m\t\t\tconsole\u001b[33m.\u001b[39mlog(\u001b[32m'request failed'\u001b[39m\u001b[33m,\u001b[39m error)\n \u001b[90m 12 | \u001b[39m\t\t})\n \u001b[90m 13 | \u001b[39m\t\u001b[33m;\u001b[39m\u001b[0m\n");
-
-/***/ }),
-/* 3 */
 /***/ (function(module, exports) {
 
 (function(self) {
@@ -580,6 +607,13 @@ throw new Error("Module build failed: SyntaxError: Unexpected token (10:2)\n\n\u
   }
   self.fetch.polyfill = true
 })(typeof self !== 'undefined' ? self : this);
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(0);
 
 
 /***/ })
