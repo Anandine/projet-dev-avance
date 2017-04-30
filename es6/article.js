@@ -7,10 +7,10 @@ export function remove() {
 		.then(parseJSON)
 		.then(function(body) {
 			console.log('report succeded with reponse', body)
-		}),
+		})/*,
 		catch(function(error) {
 			console.log('request failed', error)
-		})
+		})*/
 	;
 }
 
